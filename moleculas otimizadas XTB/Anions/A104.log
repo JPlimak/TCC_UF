@@ -1,0 +1,590 @@
+      -----------------------------------------------------------      
+     |                   =====================                   |     
+     |                           x T B                           |     
+     |                   =====================                   |     
+     |                         S. Grimme                         |     
+     |          Mulliken Center for Theoretical Chemistry        |     
+     |                    University of Bonn                     |     
+      -----------------------------------------------------------      
+
+   * xtb version 6.7.1 (edcfbbe) compiled by 'conda@3ef47c1a292c' on 2024-11-25
+
+   xtb is free software: you can redistribute it and/or modify it under
+   the terms of the GNU Lesser General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+   
+   xtb is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Lesser General Public License for more details.
+   
+   Cite this work as:
+   * C. Bannwarth, E. Caldeweyher, S. Ehlert, A. Hansen, P. Pracht,
+     J. Seibert, S. Spicher, S. Grimme, WIREs Comput. Mol. Sci., 2020, 11,
+     e01493. DOI: 10.1002/wcms.1493
+   
+   for GFN2-xTB:
+   * C. Bannwarth, S. Ehlert and S. Grimme., J. Chem. Theory Comput., 2019,
+     15, 1652-1671. DOI: 10.1021/acs.jctc.8b01176
+   for GFN1-xTB:
+   * S. Grimme, C. Bannwarth, P. Shushkov, J. Chem. Theory Comput., 2017,
+     13, 1989-2009. DOI: 10.1021/acs.jctc.7b00118
+   for GFN0-xTB:
+   * P. Pracht, E. Caldeweyher, S. Ehlert, S. Grimme, ChemRxiv, 2019, preprint.
+     DOI: 10.26434/chemrxiv.8326202.v1
+   for GFN-FF:
+   * S. Spicher and S. Grimme, Angew. Chem. Int. Ed., 2020, 59, 15665-15673.
+     DOI: 10.1002/anie.202004239
+   
+   for ALPB and GBSA implicit solvation:
+   * S. Ehlert, M. Stahn, S. Spicher, S. Grimme, J. Chem. Theory Comput.,
+     2021, 17, 4250-4261. DOI: 10.1021/acs.jctc.1c00471
+   
+   for ddCOSMO and CPCM-X implicit solvation:
+   * M. Stahn, S. Ehlert, S. Grimme, J. Phys. Chem. A,
+     2023, XX, XXXX-XXXX. DOI: 10.1021/acs.jpca.3c04382
+   
+   for DFT-D4:
+   * E. Caldeweyher, C. Bannwarth and S. Grimme, J. Chem. Phys., 2017,
+     147, 034112. DOI: 10.1063/1.4993215
+   * E. Caldeweyher, S. Ehlert, A. Hansen, H. Neugebauer, S. Spicher,
+     C. Bannwarth and S. Grimme, J. Chem. Phys., 2019, 150, 154122.
+     DOI: 10.1063/1.5090222
+   * E. Caldeweyher, J.-M. Mewes, S. Ehlert and S. Grimme, Phys. Chem. Chem. Phys.
+     2020, 22, 8499-8512. DOI: 10.1039/D0CP00502A
+   
+   for sTDA-xTB:
+   * S. Grimme and C. Bannwarth, J. Chem. Phys., 2016, 145, 054103.
+     DOI: 10.1063/1.4959605
+   
+   in the mass-spec context:
+   * V. Asgeirsson, C. Bauer and S. Grimme, Chem. Sci., 2017, 8, 4879.
+     DOI: 10.1039/c7sc00601b
+   * J. Koopman and S. Grimme, ACS Omega 2019, 4, 12, 15120-15133.
+     DOI: 10.1021/acsomega.9b02011
+   
+   for metadynamics refer to:
+   * S. Grimme, J. Chem. Theory Comput., 2019, 155, 2847-2862
+     DOI: 10.1021/acs.jctc.9b00143
+   
+   for SPH calculations refer to:
+   * S. Spicher and S. Grimme, J. Chem. Theory Comput., 2021, 17, 1701-1714
+     DOI: 10.1021/acs.jctc.0c01306
+   
+   for ONIOM refer to:
+   * C. Plett, A. Katbashev, S. Ehlert, S. Grimme, M. Bursch,
+     Phys. Chem. Chem. Phys., 2023, 25, 17860-17868. DOI: 10.1039/D3CP02178E
+   
+   for DIPRO refer to:
+   * J. Kohn, N. Gildemeister, S. Grimme, D. Fazzi, A. Hansen,
+     J. Chem. Phys., 2023, just accepted.
+   
+   for PTB refer to:
+   * S. Grimme, M. Mueller, A. Hansen, J. Chem. Phys., 2023, 158, 124111.
+     DOI: 10.1063/5.0137838
+   
+   with help from (in alphabetical order)
+   P. Atkinson, C. Bannwarth, F. Bohle, G. Brandenburg, E. Caldeweyher
+   M. Checinski, S. Dohm, S. Ehlert, S. Ehrlich, I. Gerasimov, C. Hölzer
+   A. Katbashev, J. Kohn, J. Koopman, C. Lavigne, S. Lehtola, F. März, M. Müller,
+   F. Musil, H. Neugebauer, J. Pisarek, C. Plett, P. Pracht, F. Pultar,
+   J. Seibert, P. Shushkov, S. Spicher, M. Stahn, M. Steiner, T. Strunk,
+   J. Stückrath, T. Rose, and J. Unsleber
+   
+ * started run on 2024/12/20 at 01:53:31.835     
+   ID    Z sym.   atoms
+    1    9 F      1, 3-7
+    2   33 As     2
+
+           -------------------------------------------------
+          |                Calculation Setup                |
+           -------------------------------------------------
+
+          program call               : xtb A104.xyz --opt --namespace A104 --charge -1
+          calculation namespace      : A104
+          coordinate file            : A104.xyz
+          omp threads                :                     8
+
+
+           -------------------------------------------------
+          |                 G F N 2 - x T B                 |
+           -------------------------------------------------
+
+        Reference                      10.1021/acs.jctc.8b01176
+      * Hamiltonian:
+        H0-scaling (s, p, d)           1.850000    2.230000    2.230000
+        zeta-weighting                 0.500000
+      * Dispersion:
+        s8                             2.700000
+        a1                             0.520000
+        a2                             5.000000
+        s9                             5.000000
+      * Repulsion:
+        kExp                           1.500000    1.000000
+        rExp                           1.000000
+      * Coulomb:
+        alpha                          2.000000
+        third order                    shell-resolved
+        anisotropic                    true
+        a3                             3.000000
+        a5                             4.000000
+        cn-shift                       1.200000
+        cn-exp                         4.000000
+        max-rad                        5.000000
+
+
+          ...................................................
+          :                      SETUP                      :
+          :.................................................:
+          :  # basis functions                  34          :
+          :  # atomic orbitals                  33          :
+          :  # shells                           15          :
+          :  # electrons                        48          :
+          :  max. iterations                   250          :
+          :  Hamiltonian                  GFN2-xTB          :
+          :  restarted?                      false          :
+          :  GBSA solvation                  false          :
+          :  PC potential                    false          :
+          :  electronic temp.          300.0000000     K    :
+          :  accuracy                    1.0000000          :
+          :  -> integral cutoff          0.2500000E+02      :
+          :  -> integral neglect         0.1000000E-07      :
+          :  -> SCF convergence          0.1000000E-05 Eh   :
+          :  -> wf. convergence          0.1000000E-03 e    :
+          :  Broyden damping             0.4000000          :
+          :  net charge                         -1          :
+          :  unpaired electrons                  0          :
+          ...................................................
+
+ iter      E             dE          RMSdq      gap      omega  full diag
+   1    -31.1326882 -0.311327E+02  0.838E+00    8.69       0.0  T
+   2    -31.1925409 -0.598527E-01  0.452E+00    8.35       1.0  T
+   3    -31.2006804 -0.813942E-02  0.132E+00    8.88       1.0  T
+   4    -31.2013787 -0.698365E-03  0.620E-01    8.92       1.0  T
+   5    -31.2018336 -0.454833E-03  0.215E-01    8.94       1.0  T
+   6    -31.2015764  0.257106E-03  0.303E-01    8.92       1.0  T
+   7    -31.2019656 -0.389126E-03  0.154E-02    8.97       2.5  T
+   8    -31.2019662 -0.574857E-06  0.160E-02    8.96       2.4  T
+   9    -31.2019673 -0.119825E-05  0.758E-04    8.96      49.8  T
+  10    -31.2019674 -0.534442E-08  0.962E-05    8.96     392.7  T
+  11    -31.2019674 -0.466507E-10  0.318E-05    8.96    1187.6  T
+
+   *** convergence criteria satisfied after 11 iterations ***
+
+         #    Occupation            Energy/Eh            Energy/eV
+      -------------------------------------------------------------
+         1        2.0000           -0.6723371             -18.2952
+       ...           ...                  ...                  ...
+        18        2.0000           -0.3381328              -9.2011
+        19        2.0000           -0.3381328              -9.2011
+        20        2.0000           -0.3378919              -9.1945
+        21        2.0000           -0.3378919              -9.1945
+        22        2.0000           -0.3378918              -9.1945
+        23        2.0000           -0.3350222              -9.1164
+        24        2.0000           -0.3350221              -9.1164 (HOMO)
+        25                         -0.0056719              -0.1543 (LUMO)
+        26                          0.2823598               7.6834
+        27                          0.2823598               7.6834
+        28                          0.2823598               7.6834
+        29                          0.3096078               8.4249
+       ...                                ...                  ...
+        33                          1.3195583              35.9070
+      -------------------------------------------------------------
+                  HL-Gap            0.3293502 Eh            8.9621 eV
+             Fermi-level           -0.1703470 Eh           -4.6354 eV
+
+ SCC (total)                   0 d,  0 h,  0 min,  0.006 sec
+ SCC setup                      ...        0 min,  0.000 sec (  1.827%)
+ Dispersion                     ...        0 min,  0.000 sec (  0.286%)
+ classical contributions        ...        0 min,  0.000 sec (  0.415%)
+ integral evaluation            ...        0 min,  0.002 sec ( 25.631%)
+ iterations                     ...        0 min,  0.003 sec ( 58.432%)
+ molecular gradient             ...        0 min,  0.001 sec ( 11.734%)
+ printout                       ...        0 min,  0.000 sec (  1.414%)
+
+         :::::::::::::::::::::::::::::::::::::::::::::::::::::
+         ::                     SUMMARY                     ::
+         :::::::::::::::::::::::::::::::::::::::::::::::::::::
+         :: total energy             -31.188975640643 Eh    ::
+         :: gradient norm              0.003310402880 Eh/a0 ::
+         :: HOMO-LUMO gap              8.962074440210 eV    ::
+         ::.................................................::
+         :: SCC energy               -31.201966375924 Eh    ::
+         :: -> isotropic ES            0.194360468486 Eh    ::
+         :: -> anisotropic ES         -0.013941334864 Eh    ::
+         :: -> anisotropic XC         -0.016682808752 Eh    ::
+         :: -> dispersion             -0.004458163804 Eh    ::
+         :: repulsion energy           0.012990735281 Eh    ::
+         :: add. restraining           0.000000000000 Eh    ::
+         :: total charge              -1.000000000000 e     ::
+         :::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+      ----------------------------------------------------------- 
+     |                   =====================                   |
+     |                        A N C O P T                        |
+     |                   =====================                   |
+     |               Approximate Normal Coordinate               |
+     |                Rational Function Optimizer                |
+      ----------------------------------------------------------- 
+      ----------------------------------------------------------- 
+     |                   =====================                   |
+     |                        A N C O P T                        |
+     |                   =====================                   |
+     |               Approximate Normal Coordinate               |
+     |                Rational Function Optimizer                |
+      ----------------------------------------------------------- 
+
+          ...................................................
+          :                      SETUP                      :
+          :.................................................:
+          :   optimization level            normal          :
+          :   max. optcycles                   200          :
+          :   ANC micro-cycles                  20          :
+          :   degrees of freedom                15          :
+          :.................................................:
+          :   RF solver                   davidson          :
+          :   write xtbopt.log                true          :
+          :   linear?                        false          :
+          :   energy convergence         0.5000000E-05 Eh   :
+          :   grad. convergence          0.1000000E-02 Eh/α :
+          :   maxmium RF displ.          1.0000000          :
+          :   Hlow (freq-cutoff)         0.1000000E-01      :
+          :   Hmax (freq-cutoff)         5.0000000          :
+          :   S6 in model hess.         20.0000000          :
+          ...................................................
+
+generating ANC from exact Hessian ...
+Using Lindh-Hessian (1995)
+ Shifting diagonal of input Hessian by    0.0000000000000000     
+ Lowest  eigenvalues of input Hessian
+    0.000000    0.000000    0.000000    0.000000    0.000000    0.000000
+    0.067215    0.067215    0.067215    0.072435    0.072435    0.072435
+    0.141358    0.141358    0.141358    0.465879    0.465880    0.479579
+ Highest eigenvalues
+    0.465879    0.465880    0.479579    1.568323    1.568323    1.568326
+
+
+........................................................................
+.............................. CYCLE    1 ..............................
+........................................................................
+
+ iter      E             dE          RMSdq      gap      omega  full diag
+   1    -31.2019674 -0.312020E+02  0.155E-06    8.96       0.0  T
+   2    -31.2019674 -0.355271E-13  0.640E-07    8.96   59089.2  T
+   3    -31.2019674 -0.213163E-13  0.486E-07    8.96   77702.1  T
+     SCC iter.                  ...        0 min,  0.001 sec
+     gradient                   ...        0 min,  0.001 sec
+ * total energy  :   -31.1889756 Eh     change       -0.4106937E-11 Eh
+   gradient norm :     0.0033103 Eh/α   predicted     0.0000000E+00 (-100.00%)
+   displ. norm   :     0.0069022 α      lambda       -0.2284948E-04
+   maximum displ.:     0.0069022 α      in ANC's #12, #11, #7, ...
+
+........................................................................
+.............................. CYCLE    2 ..............................
+........................................................................
+
+ iter      E             dE          RMSdq      gap      omega  full diag
+   1    -31.2018012 -0.312018E+02  0.148E-02    8.90       0.0  T
+   2    -31.2018024 -0.119076E-05  0.796E-03    8.90       4.7  T
+   3    -31.2018025 -0.132482E-06  0.421E-03    8.90       9.0  T
+   4    -31.2018025 -0.394790E-08  0.816E-04    8.90      46.3  T
+   5    -31.2018025 -0.630834E-09  0.223E-04    8.90     169.2  T
+     SCC iter.                  ...        0 min,  0.001 sec
+     gradient                   ...        0 min,  0.001 sec
+ * total energy  :   -31.1889947 Eh     change       -0.1906090E-04 Eh
+   gradient norm :     0.0022133 Eh/α   predicted    -0.1142466E-04 ( -40.06%)
+   displ. norm   :     0.0139225 α      lambda       -0.3081453E-04
+   maximum displ.:     0.0139225 α      in ANC's #12, #11, #7, ...
+
+........................................................................
+.............................. CYCLE    3 ..............................
+........................................................................
+
+ iter      E             dE          RMSdq      gap      omega  full diag
+   1    -31.2014495 -0.312014E+02  0.300E-02    8.78       0.0  T
+   2    -31.2014543 -0.485318E-05  0.161E-02    8.79       2.3  T
+   3    -31.2014549 -0.556589E-06  0.851E-03    8.79       4.4  T
+   4    -31.2014549 -0.166486E-07  0.167E-03    8.79      22.6  T
+   5    -31.2014549 -0.268181E-08  0.467E-04    8.79      80.9  T
+   6    -31.2014549 -0.534875E-09  0.308E-05    8.79    1226.9  T
+     SCC iter.                  ...        0 min,  0.001 sec
+     gradient                   ...        0 min,  0.001 sec
+ * total energy  :   -31.1890103 Eh     change       -0.1560267E-04 Eh
+   gradient norm :     0.0000332 Eh/α   predicted    -0.1541016E-04 (  -1.23%)
+   displ. norm   :     0.0003177 α      lambda       -0.4425770E-08
+   maximum displ.:     0.0003177 α      in ANC's #12, #11, #7, ...
+
+........................................................................
+.............................. CYCLE    4 ..............................
+........................................................................
+
+ iter      E             dE          RMSdq      gap      omega  full diag
+   1    -31.2014467 -0.312014E+02  0.682E-04    8.78       0.0  T
+   2    -31.2014467 -0.251303E-08  0.368E-04    8.78     102.8  T
+   3    -31.2014467 -0.288289E-09  0.194E-04    8.78     194.4  T
+     SCC iter.                  ...        0 min,  0.001 sec
+     gradient                   ...        0 min,  0.001 sec
+ * total energy  :   -31.1890103 Eh     change       -0.2725255E-08 Eh
+   gradient norm :     0.0000160 Eh/α   predicted    -0.3512095E-08 (  28.87%)
+   displ. norm   :     0.0001035 α      lambda       -0.3435073E-08
+   maximum displ.:     0.0001035 α      in ANC's #12, #11, #5, ...
+
+   *** GEOMETRY OPTIMIZATION CONVERGED AFTER 4 ITERATIONS ***
+
+------------------------------------------------------------------------
+ total energy gain   :        -0.0000347 Eh       -0.0218 kcal/mol
+ total RMSD          :         0.0079911 a0        0.0042 Å
+ total power (kW/mol):        -0.0227541 (step)   -8.5577 (real)
+------------------------------------------------------------------------
+
+ ANCopt (total)                0 d,  0 h,  0 min,  0.011 sec
+ optimizer setup                ...        0 min,  0.000 sec (  0.629%)
+ model hessian                  ...        0 min,  0.000 sec (  3.137%)
+ ANC generation                 ...        0 min,  0.000 sec (  0.842%)
+ coordinate transformation      ...        0 min,  0.000 sec (  0.186%)
+ single point calculation       ...        0 min,  0.009 sec ( 88.810%)
+ optimization log               ...        0 min,  0.000 sec (  1.385%)
+ hessian update                 ...        0 min,  0.000 sec (  0.381%)
+ rational function              ...        0 min,  0.000 sec (  2.789%)
+
+================
+ final structure:
+================
+7
+ xtb: 6.7.1 (edcfbbe)
+F            0.96003199791094        0.03692999999419       -0.08592999998648
+As           2.72459999883217        0.03692999996565       -0.08592999992009
+F            2.72459999999516       -1.63989015128651       -0.63545234098463
+F            2.72460000018166        0.58645234099602       -1.76275015120464
+F            4.48916800320496        0.03693000012552       -0.08593000029210
+F            2.72460000002478        1.71375015125017        0.46359234105658
+F            2.72459999985033       -0.51259234104505        1.59089015133137
+
+ Bond Distances (Angstroems)
+ ---------------------------
+F1-As2=1.7646        As2-F1=1.7646        As2-F3=1.7646        As2-F4=1.7646        As2-F5=1.7646        As2-F6=1.7646        
+As2-F7=1.7646        F3-As2=1.7646        F4-As2=1.7646        F5-As2=1.7646        F6-As2=1.7646        F7-As2=1.7646        
+ As F  Rav=1.7646 sigma=0.0000  Rmin=1.7646  Rmax=1.7646     6
+
+ selected bond angles (degree)
+ --------------------
+F3-As2-F1= 90.00               F4-As2-F1= 90.00               F4-As2-F3= 90.00               F5-As2-F1=180.00               
+F5-As2-F3= 90.00               F5-As2-F4= 90.00               F6-As2-F1= 90.00               F6-As2-F3=180.00               
+F6-As2-F4= 90.00               F6-As2-F5= 90.00               F7-As2-F1= 90.00               F7-As2-F3= 90.00               
+F7-As2-F4=180.00               F7-As2-F5= 90.00               F7-As2-F6= 90.00               
+
+ selected dihedral angles (degree)
+ ---------------------------------
+
+           -------------------------------------------------
+          |                Final Singlepoint                |
+           -------------------------------------------------
+
+          ...................................................
+          :                      SETUP                      :
+          :.................................................:
+          :  # basis functions                  34          :
+          :  # atomic orbitals                  33          :
+          :  # shells                           15          :
+          :  # electrons                        48          :
+          :  max. iterations                   250          :
+          :  Hamiltonian                  GFN2-xTB          :
+          :  restarted?                      false          :
+          :  GBSA solvation                  false          :
+          :  PC potential                    false          :
+          :  electronic temp.          300.0000000     K    :
+          :  accuracy                    1.0000000          :
+          :  -> integral cutoff          0.2500000E+02      :
+          :  -> integral neglect         0.1000000E-07      :
+          :  -> SCF convergence          0.1000000E-05 Eh   :
+          :  -> wf. convergence          0.1000000E-03 e    :
+          :  Broyden damping             0.4000000          :
+          :  net charge                         -1          :
+          :  unpaired electrons                  0          :
+          ...................................................
+
+ iter      E             dE          RMSdq      gap      omega  full diag
+   1    -31.2014467 -0.312014E+02  0.390E-05    8.78       0.0  T
+   2    -31.2014467 -0.108002E-11  0.237E-05    8.78    1595.8  T
+   3    -31.2014467 -0.586198E-12  0.916E-06    8.78    4126.1  T
+
+   *** convergence criteria satisfied after 3 iterations ***
+
+         #    Occupation            Energy/Eh            Energy/eV
+      -------------------------------------------------------------
+         1        2.0000           -0.6723432             -18.2954
+       ...           ...                  ...                  ...
+        18        2.0000           -0.3382737              -9.2049
+        19        2.0000           -0.3382737              -9.2049
+        20        2.0000           -0.3380315              -9.1983
+        21        2.0000           -0.3380315              -9.1983
+        22        2.0000           -0.3380315              -9.1983
+        23        2.0000           -0.3352101              -9.1215
+        24        2.0000           -0.3352101              -9.1215 (HOMO)
+        25                         -0.0124051              -0.3376 (LUMO)
+        26                          0.2812970               7.6545
+        27                          0.2812970               7.6545
+        28                          0.2812970               7.6545
+        29                          0.3005678               8.1789
+       ...                                ...                  ...
+        33                          1.3202784              35.9266
+      -------------------------------------------------------------
+                  HL-Gap            0.3228050 Eh            8.7840 eV
+             Fermi-level           -0.1738076 Eh           -4.7295 eV
+
+ SCC (total)                   0 d,  0 h,  0 min,  0.002 sec
+ SCC setup                      ...        0 min,  0.000 sec (  2.214%)
+ Dispersion                     ...        0 min,  0.000 sec (  0.713%)
+ classical contributions        ...        0 min,  0.000 sec (  0.271%)
+ integral evaluation            ...        0 min,  0.000 sec ( 20.783%)
+ iterations                     ...        0 min,  0.001 sec ( 37.306%)
+ molecular gradient             ...        0 min,  0.001 sec ( 34.516%)
+ printout                       ...        0 min,  0.000 sec (  3.504%)
+
+         :::::::::::::::::::::::::::::::::::::::::::::::::::::
+         ::                     SUMMARY                     ::
+         :::::::::::::::::::::::::::::::::::::::::::::::::::::
+         :: total energy             -31.189010306949 Eh    ::
+         :: gradient norm              0.000016077189 Eh/a0 ::
+         :: HOMO-LUMO gap              8.783969961887 eV    ::
+         ::.................................................::
+         :: SCC energy               -31.201445739695 Eh    ::
+         :: -> isotropic ES            0.194054240365 Eh    ::
+         :: -> anisotropic ES         -0.013827377609 Eh    ::
+         :: -> anisotropic XC         -0.016417467165 Eh    ::
+         :: -> dispersion             -0.004453495548 Eh    ::
+         :: repulsion energy           0.012435432746 Eh    ::
+         :: add. restraining           0.000000000000 Eh    ::
+         :: total charge              -1.000000000000 e     ::
+         :::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+           -------------------------------------------------
+          |                Property Printout                |
+           -------------------------------------------------
+
+    * Orbital Energies and Occupations
+
+         #    Occupation            Energy/Eh            Energy/eV
+      -------------------------------------------------------------
+         1        2.0000           -0.6723432             -18.2954
+       ...           ...                  ...                  ...
+        12        2.0000           -0.3698052             -10.0629
+        13        2.0000           -0.3698052             -10.0629
+        14        2.0000           -0.3424310              -9.3180
+        15        2.0000           -0.3424310              -9.3180
+        16        2.0000           -0.3424310              -9.3180
+        17        2.0000           -0.3382737              -9.2049
+        18        2.0000           -0.3382737              -9.2049
+        19        2.0000           -0.3382737              -9.2049
+        20        2.0000           -0.3380315              -9.1983
+        21        2.0000           -0.3380315              -9.1983
+        22        2.0000           -0.3380315              -9.1983
+        23        2.0000           -0.3352101              -9.1215
+        24        2.0000           -0.3352101              -9.1215 (HOMO)
+        25                         -0.0124051              -0.3376 (LUMO)
+        26                          0.2812970               7.6545
+        27                          0.2812970               7.6545
+        28                          0.2812970               7.6545
+        29                          0.3005678               8.1789
+        30                          0.3005678               8.1789
+        31                          0.3005679               8.1789
+        32                          1.3202784              35.9266
+        33                          1.3202784              35.9266
+      -------------------------------------------------------------
+                  HL-Gap            0.3228050 Eh            8.7840 eV
+             Fermi-level           -0.1738076 Eh           -4.7295 eV
+
+     #   Z          covCN         q      C6AA      α(0)
+     1   9 F        0.737    -0.233    11.586     4.020
+     2  33 As       4.423     0.397   203.040    26.111
+     3   9 F        0.737    -0.233    11.586     4.020
+     4   9 F        0.737    -0.233    11.586     4.020
+     5   9 F        0.737    -0.233    11.586     4.020
+     6   9 F        0.737    -0.233    11.586     4.020
+     7   9 F        0.737    -0.233    11.586     4.020
+
+ Mol. C6AA /au·bohr⁶  :       1153.374790
+ Mol. C8AA /au·bohr⁸  :      42134.067367
+ Mol. α(0) /au        :         50.230889
+
+
+Wiberg/Mayer (AO) data.
+largest (>0.10) Wiberg bond orders for each atom
+
+ ---------------------------------------------------------------------------
+     #   Z sym  total        # sym  WBO       # sym  WBO       # sym  WBO
+ ---------------------------------------------------------------------------
+     1   9 F    1.235 --     2 As   1.006
+     2  33 As   6.033 --     1 F    1.006     5 F    1.006     7 F    1.006
+                             3 F    1.006     6 F    1.006     4 F    1.006
+     3   9 F    1.235 --     2 As   1.006
+     4   9 F    1.235 --     2 As   1.006
+     5   9 F    1.235 --     2 As   1.006
+     6   9 F    1.235 --     2 As   1.006
+     7   9 F    1.235 --     2 As   1.006
+ ---------------------------------------------------------------------------
+
+Topologies differ in total number of bonds
+Writing topology from bond orders to xtbtopo.mol
+
+molecular dipole:
+                 x           y           z       tot (Debye)
+ q only:       -5.149      -0.070       0.162
+   full:       -5.149      -0.070       0.162      13.095
+molecular quadrupole (traceless):
+                xx          xy          yy          xz          yz          zz
+ q only:      -26.494      -0.539      13.263       1.254       0.017      13.231
+  q+dip:      -26.494      -0.539      13.263       1.254       0.017      13.231
+   full:      -26.494      -0.539      13.263       1.254       0.017      13.231
+
+           -------------------------------------------------
+          |                Geometry Summary                 |
+           -------------------------------------------------
+
+      molecular mass/u    :      188.9120135
+   center of mass at/Å    :        2.7246003       0.0369300      -0.0859300
+  moments of inertia/u·Å² :        0.2366214E+03   0.2366214E+03   0.2366214E+03
+rotational constants/cm⁻¹ :        0.7124306E-01   0.7124306E-01   0.7124306E-01
+
+ * 6 selected distances
+
+     #   Z          #   Z                                           value/Å
+     1   9 F        2  33 As                                      1.7645682 (min)
+     2  33 As       3   9 F                                       1.7645683
+     2  33 As       4   9 F                                       1.7645683 (max)
+     2  33 As       5   9 F                                       1.7645682
+     2  33 As       6   9 F                                       1.7645683
+     2  33 As       7   9 F                                       1.7645683
+
+ * 1 distinct bonds (by element types)
+
+   Z      Z             #   av. dist./Å        max./Å        min./Å
+   9 F   33 As          6     1.7645682     1.7645683     1.7645682
+
+
+optimized geometry written to: xtbopt.xyz
+
+
+           -------------------------------------------------
+          | TOTAL ENERGY              -31.189010306949 Eh   |
+          | GRADIENT NORM               0.000016077189 Eh/α |
+          | HOMO-LUMO GAP               8.783969961887 eV   |
+           -------------------------------------------------
+
+------------------------------------------------------------------------
+ * finished run on 2024/12/20 at 01:53:31.869     
+------------------------------------------------------------------------
+ total:
+ * wall-time:     0 d,  0 h,  0 min,  0.033 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.251 sec
+ * ratio c/w:     7.579 speedup
+ SCF:
+ * wall-time:     0 d,  0 h,  0 min,  0.006 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.047 sec
+ * ratio c/w:     7.855 speedup
+ ANC optimizer:
+ * wall-time:     0 d,  0 h,  0 min,  0.013 sec
+ *  cpu-time:     0 d,  0 h,  0 min,  0.102 sec
+ * ratio c/w:     7.899 speedup
+
